@@ -10,36 +10,15 @@
 
 with pkgs;
 let
-  mach-nix = import
-    (builtins.fetchGit {
-      url = "https://github.com/DavHau/mach-nix";
-      ref = "refs/tags/3.5.0";
-    })
-    { };
-
-  filterLine = filter: text: lib.lists.fold
-    (lines: next_line: lines + "\n" + next_line)
-    ""
-    (builtins.filter
-      filter
-      (lib.strings.splitString "\n" text)
-    );
-
-  python_env = mach-nix.mkPython rec {
-    requirements =
-      filterLine (line: !(lib.strings.hasInfix "file://" line))
-      (filterLine (line: !(lib.strings.hasInfix "--only-binary" line))
-        (builtins.readFile ./esp-idf/requirements.txt)) + ''
-      esptool
-      pyserial
-    '';
-  };
+  esp-idf = callPackage ./esp-idf.nix { };
 in
 
-pkgs.mkShell rec {
+mkShell rec {
   name = "esp-idf-env";
   buildInputs = with pkgs; [
-    (pkgs.callPackage ./esp32-toolchain.nix { })
+    (callPackage ./esp32-toolchain.nix { })
+    esp-idf
+    esp-idf.python_env
 
     git
     wget
@@ -55,14 +34,8 @@ pkgs.mkShell rec {
     ncurses5
 
     ninja
-
-    python_env
   ];
 
-  shellHook = ''
-    export IDF_PATH=${builtins.toString ./.}/esp-idf
-    export PATH=$IDF_PATH/tools:$PATH
-    export IDF_PYTHON_ENV_PATH=${python_env}
-  '';
+  shellHook = esp-idf.shellHook;
 }
 

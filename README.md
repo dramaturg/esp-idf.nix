@@ -20,9 +20,9 @@ The examples are to be executed after entering the development environment.
 # get code
 git clone --branch v1.19 https://github.com/micropython/micropython.git
 cd micropython/
-make -C mpy-cross/
 make -C ports/esp32 submodules
 # build
+make -C mpy-cross/
 make -C ports/esp32
 # set port
 export ESP32_PORT=/dev/ttyUSB0
