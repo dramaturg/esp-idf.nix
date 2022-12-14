@@ -9,33 +9,10 @@
 }:
 
 with pkgs;
-let
+rec {
+  esp32-toolchain = callPackage ./esp32-toolchain.nix { };
+
   esp-idf = callPackage ./esp-idf.nix { };
-in
 
-mkShell rec {
-  name = "esp-idf-env";
-  buildInputs = with pkgs; [
-    (callPackage ./esp32-toolchain.nix { })
-    esp-idf
-    esp-idf.python_env
-
-    git
-    wget
-    gnumake
-
-    flex
-    bison
-    gperf
-    pkgconfig
-
-    cmake
-
-    ncurses5
-
-    ninja
-  ];
-
-  shellHook = esp-idf.shellHook;
+  micropython-esp32 = callPackage ./micropython-esp32.nix { inherit esp32-toolchain esp-idf; };
 }
-

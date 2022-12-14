@@ -16,16 +16,6 @@ let
       filter
       (lib.strings.splitString "\n" text)
     );
-
-  python_env = mach-nix.mkPython rec {
-    requirements =
-      filterLine (line: !(lib.strings.hasInfix "file://" line))
-        (filterLine (line: !(lib.strings.hasInfix "--only-binary" line))
-          (builtins.readFile ./esp-idf/requirements.txt)) + ''
-        esptool
-        pyserial
-      '';
-  };
 in
 stdenv.mkDerivation rec {
   name = "esp-idf";
@@ -48,6 +38,13 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-37ilQ9w0XDZwVDrodoRowMa9zcDuzBYk1hSSOO8ooXY=";
   };
 
+  python_env = mach-nix.mkPython {
+    requirements =
+      filterLine (line: !(lib.strings.hasInfix "file://" line))
+        (filterLine (line: !(lib.strings.hasInfix "--only-binary" line))
+          (builtins.readFile "${src}/requirements.txt"));
+  };
+
   phases = [ "installPhase" ];
 
   installPhase = ''
@@ -62,6 +59,4 @@ stdenv.mkDerivation rec {
     export PATH=$IDF_PATH/tools:$PATH
     export IDF_PYTHON_ENV_PATH=${python_env}
   '';
-
-  inherit python_env;
 }

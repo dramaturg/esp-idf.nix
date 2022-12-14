@@ -4,7 +4,7 @@ ESP32 IDF development environment manged with nix
 ## Usage
 To enter the development environment, call it with `nix-shell`.
 ```shell
-nix-shell ~/path/to/esp-idf-env.nix
+nix-shell ~/path/to/esp-idf-env.nix/shell.nix
 ```
 
 ### Installation
