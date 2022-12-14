@@ -10,8 +10,6 @@ nix-shell ~/path/to/esp-idf-env.nix
 ### Installation
 ```shell
 git clone --recurse-submodules https://github.com/cyber-murmel/esp-idf-env.nix.git
-# run once to set up virtualenv
-nix-shell esp-idf-env.nix
 ```
 
 ### Examples

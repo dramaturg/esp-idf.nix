@@ -11,14 +11,15 @@ in
 stdenv.mkDerivation rec {
   pname = "crosstool-NG";
 
-  # version = "2020r3";
-  # gcc_version = "8_4_0";
-  # hash = "sha256-Z0CAoS+cXr5aOlzlHG3q7/5t+wbWQWIz34byW1dOknk=";
-
   # # for ESP-IDF v4.1-dev
   # version = "2019r2";
   # gcc_version = "8_2_0";
   # hash = "sha256-5tR8Hb2MjL/jcnHl4qrFPuiMnjR66TfiK/DHP1MO+98=";
+
+  # # for ESP-IDF v4.3
+  # version = "2020r3";
+  # gcc_version = "8_4_0";
+  # hash = "sha256-Z0CAoS+cXr5aOlzlHG3q7/5t+wbWQWIz34byW1dOknk=";
 
   # for ESP-IDF v4.4.3
   version = "2021r2-patch5";
