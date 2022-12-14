@@ -1,15 +1,17 @@
 # esp-idf-env.nix
 ESP32 IDF development environment manged with nix
 
-## Usage
-To enter the development environment, call it with `nix-shell`.
-```shell
-nix-shell ~/path/to/esp-idf-env.nix/shell.nix
-```
+This project makes use of [mach-nix](https://github.com/DavHau/mach-nix) to manage Python dependencies for ESP-IDF.
 
 ### Installation
 ```shell
-git clone --recurse-submodules https://github.com/cyber-murmel/esp-idf-env.nix.git
+git clone --recurse-submodules https://github.com/cyber-murmel/esp-idf.nix.git
+```
+
+## Usage
+To enter the development environment, call it with `nix-shell`.
+```shell
+nix-shell ~/path/to/esp-idf.nix/shell.nix
 ```
 
 ### Examples
