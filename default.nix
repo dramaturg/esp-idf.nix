@@ -13,6 +13,4 @@ rec {
   esp32-toolchain = callPackage ./esp32-toolchain.nix { };
 
   esp-idf = callPackage ./esp-idf.nix { };
-
-  micropython-esp32 = callPackage ./micropython-esp32.nix { inherit esp32-toolchain esp-idf; };
 }

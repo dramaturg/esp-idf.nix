@@ -16,6 +16,21 @@ let
       filter
       (lib.strings.splitString "\n" text)
     );
+  # patched sources
+  esp-idf-src = stdenv.mkDerivation {
+    name = "esp-idf-src";
+    src = fetchFromGitHub {
+      owner = "espressif";
+      repo = "esp-idf";
+      rev = "7edc3e878fc42aecf9606c584ff1122a0ae2059d"; # v4.4.3
+      fetchSubmodules = true;
+      sha256 = "sha256-37ilQ9w0XDZwVDrodoRowMa9zcDuzBYk1hSSOO8ooXY=";
+    };
+    patches = [ ./0001-fix-requirements.patch ];
+    installPhase = ''
+      cp -r . $out
+    '';
+  };
 in
 stdenv.mkDerivation rec {
   name = "esp-idf";
@@ -30,19 +45,10 @@ stdenv.mkDerivation rec {
     python_env
   ];
 
-  src = fetchFromGitHub {
-    owner = "espressif";
-    repo = "esp-idf";
-    rev = "7edc3e878fc42aecf9606c584ff1122a0ae2059d"; # v4.4.3
-    fetchSubmodules = true;
-    sha256 = "sha256-37ilQ9w0XDZwVDrodoRowMa9zcDuzBYk1hSSOO8ooXY=";
-  };
+  src = esp-idf-src;
 
   python_env = mach-nix.mkPython {
-    requirements =
-      filterLine (line: !(lib.strings.hasInfix "file://" line))
-        (filterLine (line: !(lib.strings.hasInfix "--only-binary" line))
-          (builtins.readFile "${src}/requirements.txt"));
+    requirements = builtins.readFile "${src}/requirements.txt";
   };
 
   phases = [ "installPhase" ];
