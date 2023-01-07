@@ -6,6 +6,7 @@ let
     (builtins.fetchGit {
       url = "https://github.com/DavHau/mach-nix";
       ref = "refs/tags/3.5.0";
+      rev = "7e14360bde07dcae32e5e24f366c83272f52923f";
     })
     { };
 
