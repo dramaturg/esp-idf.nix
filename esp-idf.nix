@@ -27,7 +27,9 @@ let
       fetchSubmodules = true;
       sha256 = "sha256-37ilQ9w0XDZwVDrodoRowMa9zcDuzBYk1hSSOO8ooXY=";
     };
-    patches = [ ./0001-fix-requirements.patch ];
+    patches = [
+      ./0001-esp-idf-v4.4.3-fix-requirements.patch
+    ];
     installPhase = ''
       cp -r . $out
     '';
