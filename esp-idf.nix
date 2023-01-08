@@ -1,4 +1,4 @@
-{ pkgs, fetchFromGitHub, python3, stdenv, gdb, lib }:
+{ pkgs, fetchFromGitHub, python3, stdenv, lib }:
 
 with pkgs;
 let
@@ -10,22 +10,17 @@ let
     })
     { };
 
-  filterLine = filter: text: lib.lists.fold
-    (lines: next_line: lines + "\n" + next_line)
-    ""
-    (builtins.filter
-      filter
-      (lib.strings.splitString "\n" text)
-    );
   # patched sources
   esp-idf-src = stdenv.mkDerivation {
     name = "esp-idf-src";
     src = fetchFromGitHub {
       owner = "espressif";
       repo = "esp-idf";
-      rev = "7edc3e878fc42aecf9606c584ff1122a0ae2059d"; # v4.4.3
       fetchSubmodules = true;
-      sha256 = "sha256-37ilQ9w0XDZwVDrodoRowMa9zcDuzBYk1hSSOO8ooXY=";
+      leaveDotGit = true;
+      # v4.4.3
+      rev = "6407ecb3f8d2cc07c4c230e7e64f2046af5c86f7";
+      hash = "sha256-37ilQ9w0XDZwVDrodoRowMa9zcDuzBYk1hSSOO8ooXY=";
     };
     patches = [
       ./0001-esp-idf-v4.4.3-fix-requirements.patch
@@ -54,18 +49,22 @@ stdenv.mkDerivation rec {
     requirements = builtins.readFile "${src}/requirements.txt";
   };
 
-  phases = [ "installPhase" ];
+  phases = [
+    "unpackPhase"
+    "installPhase"
+  ];
 
   installPhase = ''
+    mkdir -p $out
+    cp -r . $out/esp-idf
     makeWrapper ${python_env}/bin/python $out/bin/idf.py \
-    --add-flags ${src}/tools/idf.py \
-    --set IDF_PATH ${src} \
+    --add-flags $out/esp-idf/tools/idf.py \
+    --set IDF_PATH $out/esp-idf/ \
     --prefix PATH : "${lib.makeBinPath buildInputs}"
   '';
 
   shellHook = ''
-    export IDF_PATH=${src}
-    export PATH=$IDF_PATH/tools:$PATH
+    export PYTHONPATH=${python_env}/${python_env.sitePackages}:$PYTHONPATH
     export IDF_PYTHON_ENV_PATH=${python_env}
   '';
 }

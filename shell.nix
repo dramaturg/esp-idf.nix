@@ -15,9 +15,10 @@ mkShell {
   buildInputs = [
     esp32-toolchain
     esp-idf
-    esp-idf.python_env
 
     esptool
   ];
-  shellHook = esp-idf.shellHook;
+  shellHook = esp-idf.shellHook + ''
+    export IDF_PATH=${esp-idf}/esp-idf
+  '';
 }
