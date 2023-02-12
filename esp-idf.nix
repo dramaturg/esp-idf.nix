@@ -18,9 +18,9 @@ let
       repo = "esp-idf";
       fetchSubmodules = true;
       leaveDotGit = true;
-      # v4.4.3
-      rev = "6407ecb3f8d2cc07c4c230e7e64f2046af5c86f7";
-      hash = "sha256-37ilQ9w0XDZwVDrodoRowMa9zcDuzBYk1hSSOO8ooXY=";
+      # v4.4.4
+      rev = "dab3f38f0f966437c95e35f2c27e20d9a2a18fe7";
+      hash = "sha256-9ACFrqK41NUnKWDnT4tM2s4MAwAcrOcQIp8I3uv0aM0=";
     };
     patches = [
       ./0001-esp-idf-v4.4.3-fix-requirements.patch
