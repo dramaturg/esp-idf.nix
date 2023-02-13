@@ -1,58 +1,29 @@
-{ pkgs, fetchFromGitHub, python3, stdenv, lib }:
+{ sources ? import ./nix/sources.nix, pkgs ? import sources.nixpkgs { }
+, fetchFromGitHub, python3, stdenv, lib }:
 
 with pkgs;
 let
-  mach-nix = import
-    (builtins.fetchGit {
-      url = "https://github.com/DavHau/mach-nix";
-      ref = "refs/tags/3.5.0";
-      rev = "7e14360bde07dcae32e5e24f366c83272f52923f";
-    })
-    { };
-
-  # patched sources
-  esp-idf-src = stdenv.mkDerivation {
-    name = "esp-idf-src";
-    src = fetchFromGitHub {
-      owner = "espressif";
-      repo = "esp-idf";
-      fetchSubmodules = true;
-      leaveDotGit = true;
-      # v4.4.4
-      rev = "dab3f38f0f966437c95e35f2c27e20d9a2a18fe7";
-      hash = "sha256-9ACFrqK41NUnKWDnT4tM2s4MAwAcrOcQIp8I3uv0aM0=";
-    };
-    patches = [
-      ./0001-esp-idf-v4.4.3-fix-requirements.patch
-    ];
-    installPhase = ''
-      cp -r . $out
-    '';
+  mach-nix = import sources.mach-nix {
+    pkgs = pkgs;
+    pypiDataRev = sources.pypi-deps-db.rev;
+    pypiDataSha256 = sources.pypi-deps-db.sha256;
   };
-in
-stdenv.mkDerivation rec {
+in stdenv.mkDerivation rec {
   name = "esp-idf";
+  version = sources.esp-idf.version;
 
   nativeBuildInputs = [ pkgs.makeWrapper ];
 
-  buildInputs = with pkgs; [
-    ninja
-    cmake
-    ccache
-    dfu-util
-    python_env
-  ];
+  buildInputs = with pkgs; [ ninja cmake ccache dfu-util python_env ];
 
-  src = esp-idf-src;
+  #src = esp-idf-src;
+  src = sources.esp-idf.outPath;
 
   python_env = mach-nix.mkPython {
     requirements = builtins.readFile "${src}/requirements.txt";
   };
 
-  phases = [
-    "unpackPhase"
-    "installPhase"
-  ];
+  phases = [ "unpackPhase" "installPhase" ];
 
   installPhase = ''
     mkdir -p $out

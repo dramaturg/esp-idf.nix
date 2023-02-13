@@ -1,0 +1,41 @@
+{
+    "esp-idf": {
+        "branch": "master",
+        "description": "Espressif IoT Development Framework. Official development framework for Espressif SoCs.",
+        "homepage": "",
+        "owner": "espressif",
+        "repo": "esp-idf",
+        "rev": "v4.4.4",
+        "sha256": "1w48nrhqvwjrwcv69hrkp50i60r3qg3lcwqqgfwd7x1cvasqx03i",
+        "submodule": true,
+        "type": "tarball",
+        "url": "https://github.com/espressif/esp-idf/archive/v4.4.4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "4.4.4"
+    },
+    "mach-nix": {
+        "branch": "master",
+        "description": "Create highly reproducible python environments",
+        "homepage": "",
+        "owner": "DavHau",
+        "repo": "mach-nix",
+        "rev": "70daee1b200c9a24a0f742f605edadacdcb5c998",
+        "sha256": "0krc4yhnpbzc4yhja9frnmym2vqm5zyacjnqb3fq9z9gav8vs9ls",
+        "type": "tarball",
+        "url": "https://github.com/DavHau/mach-nix/archive/70daee1b200c9a24a0f742f605edadacdcb5c998.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "3.5.0"
+    },
+    "pypi-deps-db": {
+        "branch": "master",
+        "description": "Probably the most complete python dependency database",
+        "homepage": "",
+        "owner": "DavHau",
+        "repo": "pypi-deps-db",
+        "rev": "68ab044d69f70523865148ea4ef8cdd51d6444ae",
+        "sha256": "0w8cxn32lcj8a6ifmpyrc1vhz9kpgkx7scni8vb1k7b2qz1pxs02",
+        "type": "tarball",
+        "url": "https://github.com/DavHau/pypi-deps-db/archive/68ab044d69f70523865148ea4ef8cdd51d6444ae.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
