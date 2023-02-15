@@ -1,4 +1,4 @@
-{ sources ? import ../sources.nix, pkgs ? import sources.nixpkgs { } }:
+{ sources ? import ./nix/sources.nix, pkgs ? import sources.nixpkgs { } }:
 
 with pkgs; rec {
   esp32-toolchain = callPackage ./esp32-toolchain.nix { };
