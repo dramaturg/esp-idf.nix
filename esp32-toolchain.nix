@@ -1,4 +1,5 @@
-{ stdenv, lib, fetchurl, makeWrapper, buildFHSUserEnv }:
+{ sources ? import ./nix/sources.nix, pkgs ? import sources.nixpkgs { }, stdenv
+, lib, fetchurl, makeWrapper, buildFHSUserEnv }:
 
 let
   fhsEnv = buildFHSUserEnv {
@@ -6,9 +7,8 @@ let
     targetPkgs = pkgs: with pkgs; [ zlib ];
     runScript = "";
   };
-in
 
-stdenv.mkDerivation rec {
+in stdenv.mkDerivation rec {
   pname = "crosstool-NG";
 
   # # for ESP-IDF v4.1-dev
@@ -27,7 +27,8 @@ stdenv.mkDerivation rec {
   hash = "sha256-jvFOBAnCARtB5QSjD3DT41KHMTp5XR8kYq0s0OIFLTc=";
 
   src = fetchurl {
-    url = "https://github.com/espressif/${pname}/releases/download/esp-${version}/xtensa-esp32-elf-gcc${gcc_version}-esp-${version}-linux-amd64.tar.gz";
+    url =
+      "https://github.com/espressif/${pname}/releases/download/esp-${version}/xtensa-esp32-elf-gcc${gcc_version}-esp-${version}-linux-amd64.tar.gz";
     inherit hash;
   };
 
@@ -48,7 +49,8 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "ESP32 toolchain";
-    homepage = https://docs.espressif.com/projects/esp-idf/en/stable/get-started/linux-setup.html;
+    homepage =
+      "https://docs.espressif.com/projects/esp-idf/en/stable/get-started/linux-setup.html";
     license = licenses.gpl3;
   };
 }

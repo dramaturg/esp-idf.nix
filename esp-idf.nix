@@ -3,24 +3,30 @@
 
 with pkgs;
 let
-  mach-nix = import sources.mach-nix {
-    pkgs = pkgs;
-    pypiDataRev = sources.pypi-deps-db.rev;
-    pypiDataSha256 = sources.pypi-deps-db.sha256;
+  mach-nix = import sources.mach-nix { python = "python310"; };
+  # patched sources
+  esp-idf-src = stdenv.mkDerivation {
+    name = "esp-idf-src";
+    src = sources.esp-idf.outPath;
+    patches = [ ./0001-esp-idf-v4.4.4-fix-requirements.patch ];
+    installPhase = ''
+      cp -r . $out
+    '';
   };
 in stdenv.mkDerivation rec {
   name = "esp-idf";
   version = sources.esp-idf.version;
 
-  nativeBuildInputs = [ pkgs.makeWrapper ];
+  nativeBuildInputs = with pkgs; [ makeWrapper ];
 
   buildInputs = with pkgs; [ ninja cmake ccache dfu-util python_env ];
 
-  #src = esp-idf-src;
-  src = sources.esp-idf.outPath;
+  src = esp-idf-src;
 
   python_env = mach-nix.mkPython {
-    requirements = builtins.readFile "${src}/requirements.txt";
+    python = "python310";
+    requirements = builtins.readFile "${esp-idf-src}/requirements.txt";
+    providers = { _default = "nixpkgs,sdist"; };
   };
 
   phases = [ "unpackPhase" "installPhase" ];
