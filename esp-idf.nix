@@ -16,8 +16,7 @@ let
     src = fetchFromGitHub {
       owner = "espressif";
       repo = "esp-idf";
-      fetchSubmodules = true;
-      leaveDotGit = true;
+      fetchSubmodules = false;
       # v4.4.4
       rev = "dab3f38f0f966437c95e35f2c27e20d9a2a18fe7";
       hash = "sha256-9ACFrqK41NUnKWDnT4tM2s4MAwAcrOcQIp8I3uv0aM0=";
