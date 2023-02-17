@@ -13,13 +13,13 @@ let
   # patched sources
   esp-idf-src = stdenv.mkDerivation {
     name = "esp-idf-src";
-    src = fetchFromGitHub {
-      owner = "espressif";
-      repo = "esp-idf";
-      fetchSubmodules = false;
+    src = fetchgit {
+      url = "https://github.com/espressif/esp-idf.git";
       # v4.4.4
       rev = "dab3f38f0f966437c95e35f2c27e20d9a2a18fe7";
-      hash = "sha256-9ACFrqK41NUnKWDnT4tM2s4MAwAcrOcQIp8I3uv0aM0=";
+      hash = "sha256-tzPnR2JPepH2+8DyJu5+hLugdMo37lrT7UZGnJSPJBk=";
+      fetchSubmodules = false;
+      deepClone = false;
     };
     patches = [
       ./0001-esp-idf-v4.4.3-fix-requirements.patch
