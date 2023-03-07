@@ -152,7 +152,8 @@ in stdenv.mkDerivation rec {
 
       gdbgui==0.13.2.0
       pygdbmi<=0.9.0.2
-      python-socketio
+      python-socketio<5
+      python-engineio<4,>=3.13.0
       jinja2<3.1
       itsdangerous<2.1
 
