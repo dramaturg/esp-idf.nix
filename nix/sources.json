@@ -199,11 +199,12 @@
         "homepage": null,
         "owner": "obgm",
         "repo": "libcoap",
-        "rev": "78304f43a075e5de89ee8d9e38db52c1f6a29f2c",
-        "sha256": "1myn7pj9azghgz18sv091dckwyj304ahxgs44azb3vzs4y1lxfah",
+        "rev": "v4.3.0",
+        "sha256": "1ywrbj4nr36g89cfj6j5vw3b612183g7sd93w6gmhfx9xjl5w1xi",
         "type": "tarball",
-        "url": "https://github.com/obgm/libcoap/archive/78304f43a075e5de89ee8d9e38db52c1f6a29f2c.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+        "url": "https://github.com/obgm/libcoap/archive/v4.3.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "4.3.0"
     },
     "libexpat": {
         "branch": "master",
@@ -223,10 +224,10 @@
         "homepage": "https://libsodium.org",
         "owner": "jedisct1",
         "repo": "libsodium",
-        "rev": "5a72fb30ebc1011bedb28cd5b2d96ece06e3cff0",
-        "sha256": "1ybaq4fch4ylx615p58jfwz7mvff9smj5y46bnbb72d0damz8b63",
+        "rev": "ac48996492864ef6634377678cf3d53b678f6e69",
+        "sha256": "0110n66mcdjkirp7yicabjf308qc4j2c2fgvpr6jid95qf441gl2",
         "type": "tarball",
-        "url": "https://github.com/jedisct1/libsodium/archive/5a72fb30ebc1011bedb28cd5b2d96ece06e3cff0.tar.gz",
+        "url": "https://github.com/jedisct1/libsodium/archive/ac48996492864ef6634377678cf3d53b678f6e69.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "mach-nix": {
