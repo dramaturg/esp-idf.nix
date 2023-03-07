@@ -137,7 +137,6 @@ in stdenv.mkDerivation rec {
   src = esp-idf-src;
 
   python_env = mach-nix.mkPython {
-    #requirements = builtins.readFile "${src}/requirements.txt";
     requirements = ''
       setuptools
 
@@ -157,12 +156,6 @@ in stdenv.mkDerivation rec {
       jinja2<3.1
       itsdangerous<2.1
 
-      #gdbgui==0.13.2.0; python_version < "3.11"
-      #pygdbmi<=0.9.0.2; python_version < "3.11"
-      #python-socketio<5; python_version < "3.11"
-      #jinja2<3.1; python_version < "3.11"
-      #itsdangerous<2.1; python_version < "3.11"
-
       kconfiglib==13.7.1
 
       reedsolo>=1.5.3,<=1.5.4
@@ -175,7 +168,6 @@ in stdenv.mkDerivation rec {
       _default = "nixpkgs,conda,wheel,sdist";
       tomli = "conda";
       python-engineio = "conda";
-      #idna = "sdist";
       requests = "conda";
     };
   };
