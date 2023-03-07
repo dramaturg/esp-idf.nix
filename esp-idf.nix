@@ -1,57 +1,186 @@
-{ pkgs, fetchFromGitHub, python3, stdenv, lib }:
+{ sources ? import ./nix/sources.nix, pkgs ? import sources.nixpkgs { } }:
 
 with pkgs;
 let
-  mach-nix = import
-    (builtins.fetchGit {
-      url = "https://github.com/DavHau/mach-nix";
-      ref = "refs/tags/3.5.0";
-      rev = "7e14360bde07dcae32e5e24f366c83272f52923f";
-    })
-    { };
+  mach-nix = import (sources.mach-nix.outPath) { };
 
   # patched sources
   esp-idf-src = stdenv.mkDerivation {
     name = "esp-idf-src";
-    src = fetchFromGitHub {
-      owner = "espressif";
-      repo = "esp-idf";
-      fetchSubmodules = false;
-      # v4.4.4
-      rev = "dab3f38f0f966437c95e35f2c27e20d9a2a18fe7";
-      hash = "sha256-9ACFrqK41NUnKWDnT4tM2s4MAwAcrOcQIp8I3uv0aM0=";
-    };
-    patches = [
-      ./0001-esp-idf-v4.4.3-fix-requirements.patch
-    ];
+    src = sources.esp-idf.outPath;
+    patchPhase = "" + toString (map (p: ''
+      mkdir -p ${p.dstDir}
+      cp -r ${p.srcDir}/* ${p.dstDir}/
+    '') [
+      {
+        dstDir = "components/esptool_py/esptool";
+        srcDir = sources.esptool.outPath;
+      }
+      {
+        dstDir = "components/bt/controller/lib_esp32";
+        srcDir = sources.esp32-bt-lib.outPath;
+      }
+      {
+        dstDir =
+          "components/bootloader/subproject/components/micro-ecc/micro-ecc";
+        srcDir = sources.micro-ecc.outPath;
+      }
+      {
+        dstDir = "components/coap/libcoap";
+        srcDir = sources.libcoap.outPath;
+      }
+      {
+        dstDir = "components/nghttp/nghttp2";
+        srcDir = sources.nghttp2.outPath;
+      }
+      {
+        dstDir = "components/libsodium/libsodium";
+        srcDir = sources.libsodium.outPath;
+      }
+      {
+        dstDir = "components/spiffs/spiffs";
+        srcDir = sources.spiffs.outPath;
+      }
+      {
+        dstDir = "components/json/cJSON";
+        srcDir = sources.cJSON.outPath;
+      }
+      {
+        dstDir = "components/mbedtls/mbedtls";
+        srcDir = sources.mbedtls.outPath;
+      }
+      {
+        dstDir = "components/asio/asio";
+        srcDir = sources.asio.outPath;
+      }
+      {
+        dstDir = "components/expat/expat";
+        srcDir = sources.libexpat.outPath;
+      }
+      {
+        dstDir = "components/lwip/lwip";
+        srcDir = sources.esp-lwip.outPath;
+      }
+      {
+        dstDir = "components/mqtt/esp-mqtt";
+        srcDir = sources.esp-mqtt.outPath;
+      }
+      {
+        dstDir = "components/protobuf-c/protobuf-c";
+        srcDir = sources.protobuf-c.outPath;
+      }
+      {
+        dstDir = "components/unity/unity";
+        srcDir = sources.Unity.outPath;
+      }
+      {
+        dstDir = "examples/build_system/cmake/import_lib/main/lib/tinyxml2";
+        srcDir = sources.tinyxml2.outPath;
+      }
+      {
+        dstDir = "components/bt/host/nimble/nimble";
+        srcDir = sources.esp-nimble.outPath;
+      }
+      {
+        dstDir = "components/cbor/tinycbor";
+        srcDir = sources.tinycbor.outPath;
+      }
+      {
+        dstDir = "components/esp_wifi/lib";
+        srcDir = sources.esp32-wifi-lib.outPath;
+      }
+      {
+        dstDir = "components/tinyusb/tinyusb";
+        srcDir = sources.tinyusb.outPath;
+      }
+      {
+        dstDir =
+          "examples/peripherals/secure_element/atecc608_ecdsa/components/esp-cryptoauthlib";
+        srcDir = sources.esp-cryptoauthlib.outPath;
+      }
+      {
+        dstDir = "components/cmock/CMock";
+        srcDir = sources.CMock.outPath;
+      }
+      {
+        dstDir = "components/openthread/openthread";
+        srcDir = sources.openthread.outPath;
+      }
+      {
+        dstDir = "components/bt/controller/lib_esp32c3_family";
+        srcDir = sources.esp32c3-bt-lib.outPath;
+      }
+      {
+        dstDir = "components/esp_phy/lib";
+        srcDir = sources.esp-phy-lib.outPath;
+      }
+      {
+        dstDir = "components/openthread/lib";
+        srcDir = sources.esp-thread-lib.outPath;
+      }
+      {
+        dstDir = "components/ieee802154/lib";
+        srcDir = sources.esp-ieee802154-lib.outPath;
+      }
+    ]);
     installPhase = ''
       cp -r . $out
     '';
   };
-in
-stdenv.mkDerivation rec {
+in stdenv.mkDerivation rec {
   name = "esp-idf";
 
   nativeBuildInputs = [ pkgs.makeWrapper ];
 
-  buildInputs = with pkgs; [
-    ninja
-    cmake
-    ccache
-    dfu-util
-    python_env
-  ];
+  buildInputs = with pkgs; [ ninja cmake ccache dfu-util python_env ];
 
   src = esp-idf-src;
 
   python_env = mach-nix.mkPython {
-    requirements = builtins.readFile "${src}/requirements.txt";
+    #requirements = builtins.readFile "${src}/requirements.txt";
+    requirements = ''
+      setuptools
+
+      click
+      pyserial
+      future
+
+      cryptography
+
+      pyparsing>=2.0.3,<2.4.0
+      pyelftools
+      idf-component-manager
+
+      gdbgui==0.13.2.0
+      pygdbmi<=0.9.0.2
+      python-socketio
+      jinja2<3.1
+      itsdangerous<2.1
+
+      #gdbgui==0.13.2.0; python_version < "3.11"
+      #pygdbmi<=0.9.0.2; python_version < "3.11"
+      #python-socketio<5; python_version < "3.11"
+      #jinja2<3.1; python_version < "3.11"
+      #itsdangerous<2.1; python_version < "3.11"
+
+      kconfiglib==13.7.1
+
+      reedsolo>=1.5.3,<=1.5.4
+      bitstring>=3.1.6,<4
+      ecdsa
+
+      construct==2.10.54
+    '';
+    providers = {
+      _default = "nixpkgs,conda,wheel,sdist";
+      tomli = "conda";
+      python-engineio = "conda";
+      #idna = "sdist";
+      requests = "conda";
+    };
   };
 
-  phases = [
-    "unpackPhase"
-    "installPhase"
-  ];
+  phases = [ "unpackPhase" "installPhase" ];
 
   installPhase = ''
     mkdir -p $out
