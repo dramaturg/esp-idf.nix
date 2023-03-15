@@ -244,15 +244,15 @@
         "version": "3.5.0"
     },
     "mbedtls": {
-        "branch": "mbedtls-2.9.0-idf",
+        "branch": "master",
         "description": "An open source, portable, easy to use, readable and flexible SSL library",
         "homepage": "https://tls.mbed.org",
         "owner": "espressif",
         "repo": "mbedtls",
-        "rev": "b3a48ac894b660f6b99dd10f01818fb6fc389b42",
-        "sha256": "1axiqvw27kr4ak0r0bp99xa19wzjrn6xhawg712m7rqjv77x9i4v",
+        "rev": "e46cff44a1c47593aaf85d2e2686a464f8835a11",
+        "sha256": "0kjm73492w77yjac2hl88a5db3scrz474d9d31sn1rb7g1x43jii",
         "type": "tarball",
-        "url": "https://github.com/espressif/mbedtls/archive/b3a48ac894b660f6b99dd10f01818fb6fc389b42.tar.gz",
+        "url": "https://github.com/espressif/mbedtls/archive/e46cff44a1c47593aaf85d2e2686a464f8835a11.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "micro-ecc": {
