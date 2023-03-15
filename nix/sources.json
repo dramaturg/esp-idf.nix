@@ -91,10 +91,10 @@
         "homepage": "",
         "owner": "espressif",
         "repo": "esp-lwip",
-        "rev": "a7abf28e02282b32479f4bbaf2d90f09d2a60f4c",
-        "sha256": "17x5hgqarbgggzassz7603x2vf2silg6k4v3z73disjnb6vsc9bp",
+        "rev": "6132c9755a43d4e04de4457f1558ced415756e4d",
+        "sha256": "1scvvk429vacwj7xnaqam4113jb90p7z6b6mv88kk9d862qbgalh",
         "type": "tarball",
-        "url": "https://github.com/espressif/esp-lwip/archive/a7abf28e02282b32479f4bbaf2d90f09d2a60f4c.tar.gz",
+        "url": "https://github.com/espressif/esp-lwip/archive/6132c9755a43d4e04de4457f1558ced415756e4d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp-mqtt": {
