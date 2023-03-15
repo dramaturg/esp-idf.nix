@@ -5,10 +5,10 @@
         "homepage": "http://throwtheswitch.org",
         "owner": "ThrowTheSwitch",
         "repo": "CMock",
-        "rev": "379a9a8d5dd5cdff8fd345710dd70ae26f966c71",
-        "sha256": "1r9j3jjygg7l31xc3nffhxv51lmrqq4ppbb4ifg7ybsslak5x75s",
+        "rev": "eeecc49ce8af123cf8ad40efdb9673e37b56230f",
+        "sha256": "0vryax64lhk0h42ify8lwy6dmsn1akssq3jwdy74xw6aa40kfsrf",
         "type": "tarball",
-        "url": "https://github.com/ThrowTheSwitch/CMock/archive/379a9a8d5dd5cdff8fd345710dd70ae26f966c71.tar.gz",
+        "url": "https://github.com/ThrowTheSwitch/CMock/archive/eeecc49ce8af123cf8ad40efdb9673e37b56230f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "Unity": {
@@ -29,10 +29,10 @@
         "homepage": "http://think-async.com/Asio",
         "owner": "espressif",
         "repo": "asio",
-        "rev": "58384fb6af92e7952b1534acb3004924f7ea0565",
-        "sha256": "076zfb7hda9dv2fkm5rjjn4x4djmym4ncyaa9gvxbvw78bi464zg",
+        "rev": "f31694c9f1746ba189a4bcae2e34db15135ddb22",
+        "sha256": "17vwsgc16br2cdsl3xzkpb02bh862yz22m26z0pnv6ykcv92yk23",
         "type": "tarball",
-        "url": "https://github.com/espressif/asio/archive/58384fb6af92e7952b1534acb3004924f7ea0565.tar.gz",
+        "url": "https://github.com/espressif/asio/archive/f31694c9f1746ba189a4bcae2e34db15135ddb22.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "cJSON": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "DaveGamble",
         "repo": "cJSON",
-        "rev": "b45f48e600671feade0b6bd65d1c69de7899f2be",
-        "sha256": "1g2azjlxl9kdf6d5cfkykqxiwccw4a4cld3rxxip99xvq2xqa6la",
+        "rev": "d348621ca93571343a56862df7de4ff3bc9b5667",
+        "sha256": "1zx2phbd1wm1sw778alwcwhib0fjy32p441b11hwwwi5p6q1b59y",
         "type": "tarball",
-        "url": "https://github.com/DaveGamble/cJSON/archive/b45f48e600671feade0b6bd65d1c69de7899f2be.tar.gz",
+        "url": "https://github.com/DaveGamble/cJSON/archive/d348621ca93571343a56862df7de4ff3bc9b5667.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp-cryptoauthlib": {
@@ -79,10 +79,10 @@
         "homepage": null,
         "owner": "espressif",
         "repo": "esp-ieee802154-lib",
-        "rev": "f481c6ca2f56b92ab56cec5dae3d1cf84fa7e99c",
-        "sha256": "0pn4zvnfzgm8bd435r63dfp92ji9dwq9lrdznrs6qm3vnnmnmadh",
+        "rev": "f7b5e8059a3bb6f321e79ac3bf2aa4d2a9b93326",
+        "sha256": "0fn7067ay6c854n7b20bw271p5pji69xn02phs2x4qnqg91ykn31",
         "type": "tarball",
-        "url": "https://github.com/espressif/esp-ieee802154-lib/archive/f481c6ca2f56b92ab56cec5dae3d1cf84fa7e99c.tar.gz",
+        "url": "https://github.com/espressif/esp-ieee802154-lib/archive/f7b5e8059a3bb6f321e79ac3bf2aa4d2a9b93326.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp-lwip": {
@@ -103,10 +103,10 @@
         "homepage": "",
         "owner": "espressif",
         "repo": "esp-mqtt",
-        "rev": "5a156f56b45cc66318c9907a5bedb6a463d591cc",
-        "sha256": "1qzvc1qxmn9vbyyrfz45d7yvrwd24wabg5ib70p7d0zywnfxw1sc",
+        "rev": "bb9c8af9d552b608dd3aabf9617bde757a538ebe",
+        "sha256": "1q5v45m1701sbd3bv3naddisyki8h7v6j6ylflfd391wyghffc5y",
         "type": "tarball",
-        "url": "https://github.com/espressif/esp-mqtt/archive/5a156f56b45cc66318c9907a5bedb6a463d591cc.tar.gz",
+        "url": "https://github.com/espressif/esp-mqtt/archive/bb9c8af9d552b608dd3aabf9617bde757a538ebe.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp-nimble": {
@@ -127,10 +127,10 @@
         "homepage": null,
         "owner": "espressif",
         "repo": "esp-phy-lib",
-        "rev": "b3e4adbe7663700ff6950d9d420e112a743f586f",
-        "sha256": "1f61abd0zbxvaqq4ca0pyvi9q57n2iyrbqn0sl14z941f535b64s",
+        "rev": "9a94277c0d8dc1174fc3dd2dcb48dea49e61931d",
+        "sha256": "1i1dl99j9d0si7lab0s8rlss3dc6dwzrnjnzkbw14mq0lwvcd49a",
         "type": "tarball",
-        "url": "https://github.com/espressif/esp-phy-lib/archive/b3e4adbe7663700ff6950d9d420e112a743f586f.tar.gz",
+        "url": "https://github.com/espressif/esp-phy-lib/archive/9a94277c0d8dc1174fc3dd2dcb48dea49e61931d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp-thread-lib": {
@@ -139,10 +139,10 @@
         "homepage": "",
         "owner": "espressif",
         "repo": "esp-thread-lib",
-        "rev": "2e5a3f236f8cd7c753fd8b8f775e48e8be5f08d6",
-        "sha256": "0x4arb2fqmbzpzwqcqfhsd6djxrfab8r239j9nnjrq5zvvn1gpzj",
+        "rev": "9a8d34d8f698cad2c9468468b473e26a3dda51b9",
+        "sha256": "1b2xgcdb0msw1hckkwarwr67v563aj0ih805r0fr83yqwgv3lgam",
         "type": "tarball",
-        "url": "https://github.com/espressif/esp-thread-lib/archive/2e5a3f236f8cd7c753fd8b8f775e48e8be5f08d6.tar.gz",
+        "url": "https://github.com/espressif/esp-thread-lib/archive/9a8d34d8f698cad2c9468468b473e26a3dda51b9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp32-bt-lib": {
@@ -151,10 +151,10 @@
         "homepage": "",
         "owner": "espressif",
         "repo": "esp32-bt-lib",
-        "rev": "f18eabd48cb91d779e56e985512bf210741aa700",
-        "sha256": "0nnks5asw07adkhy0lqx7k0pisj4qf01p1idx2mr98h5chv0pnva",
+        "rev": "b867411caf88b485b2fa8b6d272692b6535a267a",
+        "sha256": "1ndpr223hcsi6g9hp8gvm5k4zvwlygyrskzmxglagdrcpr7qi2km",
         "type": "tarball",
-        "url": "https://github.com/espressif/esp32-bt-lib/archive/f18eabd48cb91d779e56e985512bf210741aa700.tar.gz",
+        "url": "https://github.com/espressif/esp32-bt-lib/archive/b867411caf88b485b2fa8b6d272692b6535a267a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp32-wifi-lib": {
@@ -187,10 +187,10 @@
         "homepage": "https://docs.espressif.com/projects/esptool",
         "owner": "espressif",
         "repo": "esptool",
-        "rev": "7b28699f5141eae8a612a0e0b2d6b20afc26e671",
-        "sha256": "0p7n5mj5zj2nx1qsypcv9p54051bibkd5h9j09ghm6vapk10s4sy",
+        "rev": "0299c38f103d38a61bc1715abe8965cf88fab4b7",
+        "sha256": "16v88p12grrg9abwhy939k02hbddrb9bqgj3y004r38l481afp3j",
         "type": "tarball",
-        "url": "https://github.com/espressif/esptool/archive/7b28699f5141eae8a612a0e0b2d6b20afc26e671.tar.gz",
+        "url": "https://github.com/espressif/esptool/archive/0299c38f103d38a61bc1715abe8965cf88fab4b7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "libcoap": {
@@ -199,10 +199,10 @@
         "homepage": null,
         "owner": "obgm",
         "repo": "libcoap",
-        "rev": "v4.3.0",
-        "sha256": "1ywrbj4nr36g89cfj6j5vw3b612183g7sd93w6gmhfx9xjl5w1xi",
+        "rev": "3aa11612c143c9734d72022720f33e12506f7a2c",
+        "sha256": "1gb99fw8v0mr6r01x8g6zrky9g42zqxlrdw4myafdg0l9fna1vxj",
         "type": "tarball",
-        "url": "https://github.com/obgm/libcoap/archive/v4.3.0.tar.gz",
+        "url": "https://github.com/obgm/libcoap/archive/3aa11612c143c9734d72022720f33e12506f7a2c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "version": "4.3.0"
     },
@@ -212,10 +212,10 @@
         "homepage": "https://libexpat.github.io/",
         "owner": "libexpat",
         "repo": "libexpat",
-        "rev": "0a69634eb45e4c169f9c85b03954f26eca61f49b",
-        "sha256": "0ncwwl3m9a0daxyvlgq98fzf24lns57nyjzaf2v1nbfw6f2fzwsb",
+        "rev": "454c6105bc2d0ea2521b8f8f7a5161c2abd8c386",
+        "sha256": "0kb2r6j23nb0mn9ndvljiq7d36jjqljf7id6nj1dw15kydydx3sh",
         "type": "tarball",
-        "url": "https://github.com/libexpat/libexpat/archive/0a69634eb45e4c169f9c85b03954f26eca61f49b.tar.gz",
+        "url": "https://github.com/libexpat/libexpat/archive/454c6105bc2d0ea2521b8f8f7a5161c2abd8c386.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "libsodium": {
@@ -224,10 +224,10 @@
         "homepage": "https://libsodium.org",
         "owner": "jedisct1",
         "repo": "libsodium",
-        "rev": "ac48996492864ef6634377678cf3d53b678f6e69",
-        "sha256": "0110n66mcdjkirp7yicabjf308qc4j2c2fgvpr6jid95qf441gl2",
+        "rev": "4f5e89fa84ce1d178a6765b8b46f2b6f91216677",
+        "sha256": "135z5xx0cksqhka3dk9nz5zhiqvp1bdsmar7l2ajy0528w86gssc",
         "type": "tarball",
-        "url": "https://github.com/jedisct1/libsodium/archive/ac48996492864ef6634377678cf3d53b678f6e69.tar.gz",
+        "url": "https://github.com/jedisct1/libsodium/archive/4f5e89fa84ce1d178a6765b8b46f2b6f91216677.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "mach-nix": {
@@ -261,10 +261,10 @@
         "homepage": "",
         "owner": "kmackay",
         "repo": "micro-ecc",
-        "rev": "b335ee812bfcca4cd3fb0e2a436aab39553a555a",
-        "sha256": "16ad2hjscypxs1n3dnq8r5y2khx5zzyslndg72ypw60wj0pk94pp",
+        "rev": "d037ec89546fad14b5c4d5456c2e23a71e554966",
+        "sha256": "005qd76kk72w8kg6pr0r07d3wym5siazdwm79dypjp6073869szl",
         "type": "tarball",
-        "url": "https://github.com/kmackay/micro-ecc/archive/b335ee812bfcca4cd3fb0e2a436aab39553a555a.tar.gz",
+        "url": "https://github.com/kmackay/micro-ecc/archive/d037ec89546fad14b5c4d5456c2e23a71e554966.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nghttp2": {
@@ -273,10 +273,10 @@
         "homepage": "https://nghttp2.org",
         "owner": "nghttp2",
         "repo": "nghttp2",
-        "rev": "5cb908b62583b52c0b905b41ef96aa3fd58f179c",
-        "sha256": "163376kh65gd6cnaqx2ncw5sr3pwnvggx899jnw3cn45051vqanq",
+        "rev": "8f7b008b158e12de0e58247afd170f127dbb6456",
+        "sha256": "1fpj4wa1y1jy24zfq637qs3hf22kldkg3n8lhfb58f8xw1k39kv1",
         "type": "tarball",
-        "url": "https://github.com/nghttp2/nghttp2/archive/5cb908b62583b52c0b905b41ef96aa3fd58f179c.tar.gz",
+        "url": "https://github.com/nghttp2/nghttp2/archive/8f7b008b158e12de0e58247afd170f127dbb6456.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -297,10 +297,10 @@
         "homepage": "https://openthread.io",
         "owner": "espressif",
         "repo": "openthread",
-        "rev": "72fa12a20406df8a24baaae4d6725fc9505ca177",
-        "sha256": "1mw95a2sip4caa2kvrjl5gpnbr0kjjhk3x8xq9l9adq1g0ldzw05",
+        "rev": "c36c0e77a2465355bcf13bd7dc718d8c9aa6ff64",
+        "sha256": "1q5wagnn52rrs462an8w4da86m0y31wdj8crc5xidv84ml48llba",
         "type": "tarball",
-        "url": "https://github.com/espressif/openthread/archive/72fa12a20406df8a24baaae4d6725fc9505ca177.tar.gz",
+        "url": "https://github.com/espressif/openthread/archive/c36c0e77a2465355bcf13bd7dc718d8c9aa6ff64.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "protobuf-c": {
@@ -309,10 +309,10 @@
         "homepage": "",
         "owner": "protobuf-c",
         "repo": "protobuf-c",
-        "rev": "abc67a11c6db271bedbb9f58be85d6f4e2ea8389",
-        "sha256": "1cwmad3hs8q5rfqb759z03wwskckn99dll5hkqr9zf9k3b7qp42c",
+        "rev": "f224ab2eeb648a818eb20687d7150a285442c907",
+        "sha256": "11jvhz3zmwf36cjnikm7y0w6awb9hw78wj946qzc3vfyk94qx7ri",
         "type": "tarball",
-        "url": "https://github.com/protobuf-c/protobuf-c/archive/abc67a11c6db271bedbb9f58be85d6f4e2ea8389.tar.gz",
+        "url": "https://github.com/protobuf-c/protobuf-c/archive/f224ab2eeb648a818eb20687d7150a285442c907.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pypi-deps-db": {
@@ -333,10 +333,10 @@
         "homepage": null,
         "owner": "pellepl",
         "repo": "spiffs",
-        "rev": "0e3104cde5db4b9d4db579296b44761930ef7501",
-        "sha256": "1vxv4hjpa6wf8cwvdjiv7yz8lmjpjrna60w5zhsfj2wrg4mqy84a",
+        "rev": "0dbb3f71c5f6fae3747a9d935372773762baf852",
+        "sha256": "0lidj3a4q8jzmz0ff220q79vd86qcbi5jx70fbw1qs2d0bp26j89",
         "type": "tarball",
-        "url": "https://github.com/pellepl/spiffs/archive/0e3104cde5db4b9d4db579296b44761930ef7501.tar.gz",
+        "url": "https://github.com/pellepl/spiffs/archive/0dbb3f71c5f6fae3747a9d935372773762baf852.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tinycbor": {
@@ -345,10 +345,10 @@
         "homepage": "",
         "owner": "intel",
         "repo": "tinycbor",
-        "rev": "24556933938fb34400329c172a3b3693269e491c",
-        "sha256": "0j5w2axzcvxb2s3p9hq2hy0sl3dzd2icn8d18r8dq746d53cf1f8",
+        "rev": "7c349dbb6b8d76db39383b226d3ebdf59b8ab37d",
+        "sha256": "1qrwlhwcwghcwby1lkiqr2xg8snp1zpfzp30y9r69fk1wsr14zai",
         "type": "tarball",
-        "url": "https://github.com/intel/tinycbor/archive/24556933938fb34400329c172a3b3693269e491c.tar.gz",
+        "url": "https://github.com/intel/tinycbor/archive/7c349dbb6b8d76db39383b226d3ebdf59b8ab37d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tinyusb": {
@@ -357,10 +357,10 @@
         "homepage": "",
         "owner": "espressif",
         "repo": "tinyusb",
-        "rev": "49628d8c1806fc9bf08e1402c2f8271582c9169a",
-        "sha256": "1q6gjqglfcl69m6yjzzvh92f4sqjq65s02i4winx444cq0vxl9jj",
+        "rev": "c4badd394eda18199c0196ed0be1e2d635f0a5f6",
+        "sha256": "09w6bwpmgzv108jw8rcm313nc77acc5hhgfc68lxnpkdp5i12yfq",
         "type": "tarball",
-        "url": "https://github.com/espressif/tinyusb/archive/49628d8c1806fc9bf08e1402c2f8271582c9169a.tar.gz",
+        "url": "https://github.com/espressif/tinyusb/archive/c4badd394eda18199c0196ed0be1e2d635f0a5f6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tinyxml2": {
