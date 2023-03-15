@@ -163,10 +163,10 @@
         "homepage": null,
         "owner": "espressif",
         "repo": "esp32-wifi-lib",
-        "rev": "1ae8090158192107c0dfbc2de20f1e6dcc0f60e2",
-        "sha256": "1rkimq1cl51g7ll26lgi96c9s7knlwaqr6p7dr6br5xaxykq7666",
+        "rev": "a623797989b7347c392c1b73561d52d8eaa2fd45",
+        "sha256": "1aa8pni4jb76bc7jax1ihqf2cw0gp53np8zav3hc6m6f0pkfl3rn",
         "type": "tarball",
-        "url": "https://github.com/espressif/esp32-wifi-lib/archive/1ae8090158192107c0dfbc2de20f1e6dcc0f60e2.tar.gz",
+        "url": "https://github.com/espressif/esp32-wifi-lib/archive/a623797989b7347c392c1b73561d52d8eaa2fd45.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "esp32c3-bt-lib": {
